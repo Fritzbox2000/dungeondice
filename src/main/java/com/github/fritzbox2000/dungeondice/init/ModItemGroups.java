@@ -1,14 +1,16 @@
 package com.github.fritzbox2000.dungeondice.init;
+// Import statements
 
 import com.github.fritzbox2000.dungeondice.DungeonDice;
+import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 import java.util.function.Supplier;
 
 public class ModItemGroups{
-
-    public static final ItemGroup MOD_ITEM_GROUP = new ModItemGroup(DungeonDice.MODID, () -> new ItemStack(ModItems.EXAMPLE_ITEM));
+    // The grouping of all the items in the creative menu
+    public static final ItemGroup MOD_ITEM_GROUP = new ModItemGroup(DungeonDice.MODID, () -> new ItemStack(ModItems.D20));
 
     public static class ModItemGroup extends ItemGroup {
 
@@ -20,6 +22,7 @@ public class ModItemGroups{
         }
 
         @Override
+        @MethodsReturnNonnullByDefault
         public ItemStack createIcon() {
             return iconSupplier.get();
         }
